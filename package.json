@@ -1,0 +1,22 @@
+{
+  "name": "wreck",
+  "version": "1.0.0",
+  "description": "A 2D top-down survival game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fet1sov/Wreck.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "fet1sov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fet1sov/Wreck/issues"
+  },
+  "homepage": "https://github.com/fet1sov/Wreck#readme"
+}
