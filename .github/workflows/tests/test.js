@@ -6,4 +6,4 @@ describe('Client endpoints', () => {
         const response = await supertest(app).get('/');
         expect(response.statusCode).toBe(200);
     });
-})
+});

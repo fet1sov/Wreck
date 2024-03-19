@@ -1,11 +1,10 @@
 const express = require('express');
-const router = express.Router();
 const app = express();
 
 let http = require('http');
-let fs = require('fs');
 
 app.use(express.static('client'));
+app.use(express.static('game'));
 
 if (process.env.NODE_ENV != "test")
 {
