@@ -36,8 +36,8 @@ export class Tile {
 
     /**
      * Rendering method of Tile
-     * @param {CanvasRenderingContext2D} 2D context of canvas
-     * @param {Resources} Game assets class
+     * @param {CanvasRenderingContext2D} ctx 2D context of canvas
+     * @param {Resources} resources Game assets class
      */  
     render(ctx, resources)
     {

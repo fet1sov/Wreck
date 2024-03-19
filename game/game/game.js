@@ -8,19 +8,20 @@ import { World } from "./world/world.js";
 */
 
 export class Game {
+    
     /**
      * Game instance constructor
      * It creating the world and initialize basic resource
-     * @param {any} Canvas document element
-     * @param {CanvasRenderingContext2D} 2D context of canvas
-     * @param {Resources} Game assets class
+     * @param {any} canvas Canvas document element
+     * @param {CanvasRenderingContext2D} ctx 2D context of canvas
+     * @param {Resources} resources Game assets class
      */  
     constructor(canvas, ctx, resources) {
         this.canvas = canvas;
         this.ctx = ctx;
         this.resources = resources;
 
-        this.world = new World("#60BC23", 32);
+        this.world = new World("#60BC23", 10);
     }
 
     /**
