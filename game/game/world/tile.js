@@ -11,7 +11,8 @@ export class Tile {
      * @param {number} x - Coordinate by X
      * @param {number} y - Coordinate by Y
      */    
-    constructor(x, y) {
+    constructor(type, x, y) {
+        this.type = type;
         this.x = x;
         this.y = y;
     }
@@ -41,6 +42,9 @@ export class Tile {
      */  
     render(ctx, resources)
     {
-        ctx.drawImage(resources.images.bush.image, this.x, this.y);
+        if (this.type == "bush")
+        {
+            ctx.drawImage(resources.images.bush.image, this.x * 32, this.y * 32);
+        }
     }
 }

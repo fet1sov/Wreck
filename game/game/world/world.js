@@ -19,8 +19,8 @@ export class World {
         this.chunk = new Chunk(worldSize);
         this.biomeColor = biomeColor;
 
-        this.chunk.setTile(0, 0, new Tile(1, 1));
-        this.chunk.setTile(1, 0, new Tile(20, 32));
+        this.chunk.setTile(0, 0, new Tile("bush", 1, 1));
+        this.chunk.setTile(1, 0, new Tile("bush", 1, 2));
     }
 
     /**
