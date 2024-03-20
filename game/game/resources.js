@@ -1,3 +1,11 @@
+/**
+*   Resources
+*   Class which is initializing 
+*   all image and sound resouces of game engine
+*
+*   @author fet1sov <prodaugust21@gmail.com>
+*/
+
 class Resources {
     constructor() {
         this.toLoad = {
@@ -16,7 +24,7 @@ class Resources {
             this.images[key].isLoaded = true;
           }
         });
-    }
+  }
 }
 
 export const resources = new Resources();
