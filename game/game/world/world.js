@@ -16,11 +16,9 @@ export class World {
      * @param {number} worldSize - Size of the world
      */  
     constructor(biomeColor, worldSize) {
-        this.chunk = new Chunk(worldSize);
+        this.worldSize = worldSize;
+        this.chunk = new Chunk(this.worldSize);
         this.biomeColor = biomeColor;
-
-        this.chunk.setTile(0, 0, new Tile("bush", 1, 1));
-        this.chunk.setTile(1, 0, new Tile("bush", 1, 2));
     }
 
     /**
@@ -29,8 +27,25 @@ export class World {
      * @param {number} y - Coordinate by Y
      */    
     getTile(x, y) {
-        return this.chunks[x][y];
+        return this.chunk[x][y];
     }
+
+    /**
+     * Randomly generates tiles in the world
+     */
+    generateWorld() {
+        for (let i = 0; i < this.worldSize; i++) {
+            for (let j = 0; j < this.worldSize; j++) {
+                let tileTypeRandom = Math.random() * (15 - 1) + 1;
+
+                if (tileTypeRandom >= 14)
+                {
+                    this.chunk.setTile(i, j, new Tile("bush", i, j));
+                }
+            }
+        }
+    }
+
 
     /**
      * World rendering method

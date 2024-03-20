@@ -21,7 +21,8 @@ export class Game {
         this.ctx = ctx;
         this.resources = resources;
 
-        this.world = new World("#60BC23", 10);
+        this.world = new World("#60BC23", 16);
+        this.world.generateWorld();
     }
 
     /**
