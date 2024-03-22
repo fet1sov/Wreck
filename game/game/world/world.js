@@ -17,30 +17,41 @@ export class World {
      */  
     constructor(biomeColor, worldSize) {
         this.worldSize = worldSize;
-        this.chunk = new Chunk(this.worldSize);
+
+        this.chunks = new Array(this.worldSize);
+        for (let i = 0; i < this.chunks.length; i++) {
+            this.chunks[i] = new Array(this.worldSize);
+        }
+
+        for (let x = 0; x < this.worldSize; x++) {
+            for (let y = 0; y < this.worldSize; y++) {
+                this.chunks[x][y] = new Chunk(16);
+            }
+        }
+
         this.biomeColor = biomeColor;
     }
 
     /**
-     * Get the tile from chunk
+     * Get the chunk
      * @param {number} x - Coordinate by X
      * @param {number} y - Coordinate by Y
      */    
-    getTile(x, y) {
-        return this.chunk[x][y];
+    getChunk(x, y) {
+        return this.chunks[x][y];
     }
 
     /**
      * Randomly generates tiles in the world
      */
     generateWorld() {
-        for (let i = 0; i < this.worldSize; i++) {
-            for (let j = 0; j < this.worldSize; j++) {
+        for (let x = 0; x < this.worldSize; x++) {
+            for (let y = 0; y < this.worldSize; y++) {
                 let tileTypeRandom = Math.random() * (15 - 1) + 1;
 
                 if (tileTypeRandom >= 14)
                 {
-                    this.chunk.setTile(i, j, new Tile("bush", i, j));
+                    this.chunks[x][y].setTile(x, y, new Tile("bush", x, y));
                 }
             }
         }
@@ -55,6 +66,10 @@ export class World {
         ctx.fillStyle = this.biomeColor;
         ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-        this.chunk.render(ctx, resources);
+        for (let x = 0; x < this.worldSize; x++) {
+            for (let y = 0; y < this.worldSize; y++) {
+                this.chunks[x][y].render(ctx, resources);
+            }
+        }
     }
 }
