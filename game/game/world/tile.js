@@ -36,6 +36,42 @@ export class Tile {
     }
 
     /**
+     * Sets X coordinate of Tile
+     * @param {number} X coordinate
+     */  
+    setX(x)
+    {
+        this.x = x;
+    }
+
+    /**
+     * Sets Y coordinate of Tile
+     * @param {number} Y coordinate
+     */  
+    setY(y)
+    {
+        this.y = y;
+    }
+
+    /**
+     * Get a Type of the Tile
+     * @return {string} Type of tile
+     */
+    getType()
+    {
+        return this.type;
+    }
+
+    /**
+     * Set a Type of the Tile
+     * @param {string} Type of tile
+     */
+    setType(type)
+    {
+        this.type = type;
+    }
+
+    /**
      * Rendering method of Tile
      * @param {CanvasRenderingContext2D} ctx 2D context of canvas
      * @param {Resources} resources Game assets class

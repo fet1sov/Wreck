@@ -46,7 +46,6 @@ export class World {
         }
     }
 
-
     /**
      * World rendering method
      * @param {CanvasRenderingContext2D} ctx 2D context of canvas
