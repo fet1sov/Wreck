@@ -49,7 +49,7 @@ export class World {
             for (let y = 0; y < this.worldSize; y++) {
                 let tileTypeRandom = Math.random() * (15 - 1) + 1;
 
-                if (tileTypeRandom >= 14)
+                if (tileTypeRandom >= 10)
                 {
                     this.chunks[x][y].setTile(x, y, new Tile("bush", x, y));
                 }
@@ -68,7 +68,7 @@ export class World {
 
         for (let x = 0; x < this.worldSize; x++) {
             for (let y = 0; y < this.worldSize; y++) {
-                this.chunks[x][y].render(ctx, resources);
+                this.chunks[x][y].render(ctx, resources, x, y);
             }
         }
     }

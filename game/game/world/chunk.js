@@ -35,13 +35,13 @@ export class Chunk {
      * @param {CanvasRenderingContext2D} ctx 2D context of canvas
      * @param {Resources} resources Game assets class
      */  
-    render(ctx, resources)
+    render(ctx, resources, offsetX = 1, offsetY = 1)
     {
         for (let i = 0; i < this.chunkList.length; i++) {
             for (let j = 0; j < this.chunkList[i].length; j++) {
                 if (typeof this.chunkList[i][j] !== "undefined")
                 {
-                    this.chunkList[i][j].render(ctx, resources);
+                    this.chunkList[i][j].render(ctx, resources, offsetX, offsetY);
                 }
             }
         }

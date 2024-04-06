@@ -76,11 +76,11 @@ export class Tile {
      * @param {CanvasRenderingContext2D} ctx 2D context of canvas
      * @param {Resources} resources Game assets class
      */  
-    render(ctx, resources)
+    render(ctx, resources, offsetX = 1, offsetY = 1)
     {
         if (this.type == "bush")
         {
-            ctx.drawImage(resources.images.bush.image, this.x * 32, this.y * 32);
+            ctx.drawImage(resources.images.bush.image, this.x * 32 * offsetX, this.y * 32 * offsetY);
         }
     }
 }
