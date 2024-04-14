@@ -25,7 +25,7 @@ export class World {
 
         for (let x = 0; x < this.worldSize; x++) {
             for (let y = 0; y < this.worldSize; y++) {
-                this.chunks[x][y] = new Chunk(16);
+                this.chunks[x][y] = new Chunk(this.worldSize);
             }
         }
 

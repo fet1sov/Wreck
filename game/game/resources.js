@@ -10,6 +10,7 @@ class Resources {
     constructor() {
         this.toLoad = {
           bush: "/assets/bush.png",
+          player: "/assets/player.png"
         };
 
         this.images = {};

@@ -8,8 +8,9 @@ app.use(express.static('game'));
 
 if (process.env.NODE_ENV != "test")
 {
-    let httpServer = http.createServer(app).listen(3000);
-    console.log(`Listening on port ${httpServer.address().port}`); 
+    let port = 3000;
+    http.createServer(app).listen(port);
+    console.log(`Listening on port ${port}`); 
 }
 
 module.exports.app = app;

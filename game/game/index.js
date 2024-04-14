@@ -24,4 +24,8 @@ window.onload = function () {
     }
       
     draw();
+
+    window.addEventListener("keydown", function(event) {
+        game.keyboardInput(event.code);
+    });
 }
