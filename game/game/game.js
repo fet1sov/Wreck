@@ -24,7 +24,7 @@ export class Game {
 
         this.world = new World("#60BC23", 16);
         this.world.generateWorld();
-        this.player = new Player(0, 0);
+        this.player = new Player(this.canvas.width / 2, this.canvas.height / 2);
     }
 
     /**
@@ -42,8 +42,11 @@ export class Game {
      * Game rendering method
      */  
     render() {
-        this.world.render(this.ctx, this.resources);
+        this.ctx.fillStyle = this.world.biomeColor;
+        this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+
         this.player.render(this.ctx, this.resources);
+        this.world.render(this.ctx, this.resources);
     }
 
     /**

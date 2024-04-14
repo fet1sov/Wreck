@@ -8,7 +8,6 @@ import { GameObject } from "../objects/gameObject.js";
 */
 
 export class Player extends GameObject {
-
     constructor(x, y, attributes = {})
     {
         super(x, y);

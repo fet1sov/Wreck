@@ -63,9 +63,6 @@ export class World {
      * @param {Resources} resources Game assets class
      */  
     render(ctx, resources) {
-        ctx.fillStyle = this.biomeColor;
-        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
         for (let x = 0; x < this.worldSize; x++) {
             for (let y = 0; y < this.worldSize; y++) {
                 this.chunks[x][y].render(ctx, resources, x, y);
